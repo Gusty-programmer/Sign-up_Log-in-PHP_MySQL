@@ -1,6 +1,23 @@
 <?php
-
+include_once "captcha.php";
 if(isset($_POST["submit"]) || isset($_POST["updatecont"])){
+
+      if(isset($_POST["submit"])){
+         $page = "signup";
+      }
+      if(isset($_POST["updatecont"])){
+         $page = "profile";
+      }
+
+   if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])){
+      
+      $url = 'https://www.google.com/recaptcha/api/siteverify?secret='
+               . $secret_key . '&response=' . $_POST['g-recaptcha-response'];
+      $response = file_get_contents($url);
+      $response = json_decode($response);
+ 
+ if ($response->success == true){
+
 $firstName = $_POST['firstname'];
 $lastName = $_POST['lastname'];
 $username = $_POST['username'];
@@ -75,7 +92,13 @@ if(isset($_POST["submit"])){
  
 }
  
- }   
+ }
+ }
+ else{
+   header('location: ../../'.$page.'.php?error=captcha'); 
+   exit();
+}
+}  
 else{
    header('location: ../../'.$page.'.php'); 
    exit();

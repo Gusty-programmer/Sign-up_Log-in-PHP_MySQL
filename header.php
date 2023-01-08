@@ -10,6 +10,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-Log php</title>
     <link rel="stylesheet" href= "Css/style.css">
+    <script src=
+        "https://www.google.com/recaptcha/api.js" async defer>
+    </script>
 </head>
 <body>
     <div class="nav">

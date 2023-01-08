@@ -1,5 +1,6 @@
 <?php 
-include_once"header.php";
+require_once "private/includes/captcha.php";
+include_once "header.php";
 ?>
 <section class="sign-form">
 <div class="sign-form-div">
@@ -11,6 +12,7 @@ include_once"header.php";
     Repeat password<br><input type="password" name="pswdrepet" require><br><br>
     Firstname<br><input type="text" name="firstname" require><br><br>
     Lastname<br><input type="text" name="lastname" require><br><br>
+    <div class="g-recaptcha"  data-sitekey=<?php echo" $public_key "?>></div>
     <button type="submit" name="submit" require>Signup</button>
 </form>  
 </div>
@@ -41,6 +43,9 @@ switch($_GET["error"]){
     case "stmtfailed" :
       echo " conectare nereusita !";
       break;
+      case "captcha" :
+        echo " Reverifica reCaptcha !";
+        break;
     case "none" :
       echo " Te-ai inregistrat cu successucces ! <br>";
       echo "<button class='btnlog'><a href='login.php'>Log in</a></button>";

@@ -42,7 +42,7 @@ a:hover{
 }
 .sign-form-div{
   background: rgba(250, 228, 195, 0.8);
-  width: 300px;
+  width: 350px;
   margin:20px;
   padding: 10px;
   font-size: 1.3rem;
@@ -58,11 +58,12 @@ a:hover{
 }
 .sign-form-div button{
   border: none;
-  border-radius: 2px;
+  border-radius: 3px;
   background-color: aquamarine;
   cursor: pointer;
   padding: 7px;
   width: 250px;
+  margin-top: 20px;
 }
 
 .img{
@@ -125,9 +126,7 @@ a:hover{
     width: 20%;
     padding: 5px;
   }
-  form{
-    margin: 0px;
-  }
+  
   
   .menubtn{
     font-size: 1.2rem;
@@ -169,6 +168,9 @@ a:hover{
     width: 100%;
     text-align: center;
     background-color: burlywood;
+  }
+  .g-recaptcha{
+    width: 200px;
   }
  
   
